@@ -2,15 +2,24 @@
 *.slo
 *.lo
 *.o
+*.ko
 
 # Compiled Dynamic libraries
+*.dll
 *.so
+*.so.*
 *.dylib
 
 # Compiled Static libraries
 *.lai
 *.la
+*.lib
 *.a
 
-# Eclipse Metadata
+# Executables
+*.exe
+*.out
+*.app
+
+# Eclipse metadata
 *.metadata
