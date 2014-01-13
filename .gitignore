@@ -59,6 +59,7 @@ local.properties
 .settings/
 .loadpath
 */Debug/*
+.cproject
 
 # External tool builders
 .externalToolBuilders/
