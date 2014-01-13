@@ -35,6 +35,29 @@ int main() {
 	cout << "call by ref" << endl;
 	cout << byRefVolume(a, b, c) << endl;
 
+	cout << endl << endl;
+
+	cout << "bit operators" << endl;
+	int x = 1, y = 2, res;
+
+	res = x & y;
+	cout << "0x01 & 0x10: " << res << endl;
+	res = x | y;
+	cout << "0x01 | 0x10: " << res << endl;
+	res = x ^ y;
+	cout << "0x01 ^ 0x10: " << res << endl;
+	res = x << y;
+	cout << "0x01 << 0x10: " << res << endl;
+	res = x >> y;
+	cout << "0x01 >> 0x10: " << res << endl;
+	res = y >> x;
+	cout << "0x10 >> 0x01: " << res << endl;
+
+
+	unsigned int z = 2;
+	cout << "not unsigned ~0x10: " << ~y << endl;
+	cout << "unsigned ~0x10: " << ~z << endl;
+
 	return 0;
 }
 
