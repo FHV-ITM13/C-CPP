@@ -1,37 +1,37 @@
 # Compiled Object files
-*.slo
-*.lo
-*.o
-*.ko
+# *.slo
+# *.lo
+# *.o
+# *.ko
 
 # Compiled Dynamic libraries
-*.dll
-*.so
-*.so.*
-*.dylib
+#*.dll
+#*.so
+#*.so.*
+#*.dylib
 
 # Compiled Static libraries
-*.lai
-*.la
-*.lib
-*.a
+#*.lai
+#*.la
+#*.lib
+#*.a
 
 # Executables
-*.exe
-*.out
-*.app
+#*.exe
+#*.out
+#*.app
 
 # Eclipse files
-*.pydevproject
-.project
+#*.pydevproject
+#.project
 .metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
+#bin/**
+#tmp/**
+#tmp/**/*
+#*.tmp
+#*.bak
+#*.swp
+#*~.nib
 local.properties
 .settings/
 .loadpath
