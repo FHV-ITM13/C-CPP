@@ -58,6 +58,7 @@ tmp/**/*
 local.properties
 .settings/
 .loadpath
+*/Debug/*
 
 # External tool builders
 .externalToolBuilders/
