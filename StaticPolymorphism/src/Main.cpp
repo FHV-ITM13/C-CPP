@@ -9,6 +9,12 @@
 #include <string>
 using namespace std;
 
+/**
+ * Nette Erklaerung:
+ * http://en.wikipedia.org/wiki/Curiously_Recurring_Template_Pattern
+ * http://en.wikipedia.org/wiki/Template_metaprogramming#Static_polymorphism
+ */
+
 template<class Derived>
 class Base {
 public:
