@@ -84,6 +84,15 @@ int main() {
 	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
 	cout << "pI3 Adr: " << pI3 << " value: " << *pI3  << endl;
 
+
+	string *sPtr = new string("Stefan");
+	*sPtr += " ist hier";
+	cout << endl << endl << "sPtr content before delete: " << *sPtr << endl;
+	cout << "sPtr adr before delete: " << sPtr << endl;
+	delete sPtr; // don’t forget!!
+	cout << "sPtr adr after delete: " << sPtr << endl;
+	cout << "sPtr content after delete: " << *sPtr << endl;
+
 	return 0;
 }
 
