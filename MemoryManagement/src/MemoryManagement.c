@@ -62,7 +62,7 @@ uint16_t mem_alloc(uint16_t size) {
 	void* pDataStart = (uint8_t*) pLastHeapPos + sizeof(block_header_t);
 
 	//setzen der naechsten freien heap pos
-	pLastHeapPos = (uint8_t*)pDataStart + sizeof(pNewBlock->len);
+	pLastHeapPos = (uint8_t*)pDataStart + pNewBlock->len;
 
 	//speichern des pointers auf das datensegment im array
 	pArr[freeIndex] = pDataStart;
