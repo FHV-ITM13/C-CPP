@@ -61,9 +61,9 @@ int main() {
 
 
 	cout << endl << endl << "Const test" << endl;
-	const int *pI1 = &x;
-	int *const pI2 = &x;
-	const int *const pI3 = &x;
+	const int *pI1 = &x; //increase pointer works, change content not
+	int *const pI2 = &x; //change content works, increase pointer not
+	const int *const pI3 = &x; //nothing is allowed
 
 	cout << "pI1 Adr: " << pI1 << " value: " << *pI1 << endl;
 	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
@@ -83,6 +83,7 @@ int main() {
 	cout << "pI1 Adr: " << &pI1 << " value: " << *pI1 << endl;
 	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
 	cout << "pI3 Adr: " << pI3 << " value: " << *pI3  << endl;
+
 	return 0;
 }
 
