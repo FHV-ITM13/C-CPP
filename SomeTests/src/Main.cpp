@@ -5,7 +5,7 @@ using namespace std;
 
 int byValVolume(int, int, int);
 int byRefVolume(int&, int&, int&); //C++ - wird automatisch von C++ gemacht
-int byRefVolume2(int*, int*, int* ); //C variante byRefVolume2(&a, &b, &c)
+//int byRefVolume2(int*, int*, int* ); //C variante byRefVolume2(&a, &b, &c)
 
 int main() {
 	cout << "Size of test" << endl;
@@ -59,6 +59,30 @@ int main() {
 	cout << "not unsigned ~0x10: " << ~y << endl;
 	cout << "unsigned ~0x10: " << ~z << endl;
 
+
+	cout << endl << endl << "Const test" << endl;
+	const int *pI1 = &x;
+	int *const pI2 = &x;
+	const int *const pI3 = &x;
+
+	cout << "pI1 Adr: " << pI1 << " value: " << *pI1 << endl;
+	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
+	cout << "pI3 Adr: " << pI3 << " value: " << *pI3  << endl;
+	//*pI1 = 10; //assignment of read-only location '* pI1'
+	*pI2 = 15;
+	//*pI3 = 20; //assignment of read-only location '*(const int*)pI3'
+	cout << "changed value to 15 via pI2 - all others were read-only" << endl;
+	cout << "pI1 Adr: " << &pI1 << " value: " << *pI1 << endl;
+	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
+	cout << "pI3 Adr: " << pI3 << " value: " << *pI3  << endl;
+
+	++pI1;
+	//++pI2;  //increment of read-only variable 'pI2'
+	//++pI3; //increment of read-only variable 'pI3'
+	cout << "increased pI1 - all others were read-only" << endl;
+	cout << "pI1 Adr: " << &pI1 << " value: " << *pI1 << endl;
+	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
+	cout << "pI3 Adr: " << pI3 << " value: " << *pI3  << endl;
 	return 0;
 }
 
