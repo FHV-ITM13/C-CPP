@@ -4,7 +4,8 @@
 using namespace std;
 
 int byValVolume(int, int, int);
-int byRefVolume(int&, int&, int&);
+int byRefVolume(int&, int&, int&); //C++ - wird automatisch von C++ gemacht
+int byRefVolume2(int*, int*, int* ); //C variante byRefVolume2(&a, &b, &c)
 
 int main() {
 	cout << "Size of test" << endl;
