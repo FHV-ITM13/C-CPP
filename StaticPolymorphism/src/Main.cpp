@@ -19,11 +19,11 @@ template<class Derived>
 class Base {
 public:
 	static string StaticCanPerformAction() {
-		return Derived::staticCanPerformActionImpl();
+		return "base: " + Derived::staticCanPerformActionImpl();
 	}
 
 	string CanPerformAction() {
-		return static_cast<Derived *>(this)->canPerformActionImpl();
+		return "base: " + static_cast<Derived *>(this)->canPerformActionImpl();
 	}
 };
 
