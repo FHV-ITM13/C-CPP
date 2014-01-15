@@ -62,7 +62,7 @@ int main() {
 
 	cout << endl << endl << "Const test" << endl;
 	const int *pI1 = &x; //increase pointer works, change content not
-	int *const pI2 = &x; //change content works, increase pointer not
+	int *const pI2 = &x; //change content works, increase pointer not (points always to same memory location)
 	const int *const pI3 = &x; //nothing is allowed
 
 	cout << "pI1 Adr: " << pI1 << " value: " << *pI1 << endl;
