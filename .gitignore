@@ -46,7 +46,7 @@
 
 # Eclipse files
 *.pydevproject
-.project
+#.project
 .metadata
 bin/**
 tmp/**
@@ -59,7 +59,7 @@ local.properties
 .settings/
 .loadpath
 */Debug/*
-.cproject
++.cproject
 
 # External tool builders
 .externalToolBuilders/
