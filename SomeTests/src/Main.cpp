@@ -84,14 +84,31 @@ int main() {
 	cout << "pI2 Adr: " << pI2 << " value: " << *pI2  << endl;
 	cout << "pI3 Adr: " << pI3 << " value: " << *pI3  << endl;
 
-
+	cout << endl << endl << "String test" << endl;
 	string *sPtr = new string("Stefan");
 	*sPtr += " ist hier";
 	cout << endl << endl << "sPtr content before delete: " << *sPtr << endl;
 	cout << "sPtr adr before delete: " << sPtr << endl;
 	delete sPtr; // don’t forget!!
-	cout << "sPtr adr after delete: " << sPtr << endl;
-	cout << "sPtr content after delete: " << *sPtr << endl;
+
+	//wird Dangling Pointer genannt (defekter Verweis)
+	cout << "sPtr adr after delete: " << sPtr << endl; //adr is the same!
+	cout << "sPtr content after delete: " << *sPtr << endl << endl; //output is empty
+
+	string *pStrTest1 = new string("Test 1234");
+	string *pStrTest2 = pStrTest1;
+	cout << "pStrTest1: " << *pStrTest1 << "(adr: " << pStrTest1 << ")" << " pStrTest2: " << *pStrTest2 << "(adr: " << pStrTest2 << ")" << endl;
+	cout << "delete both..." << endl;
+	//Dangling Pointer
+	delete pStrTest1;
+	delete pStrTest2;
+
+	cout << "pStrTest1: " << *pStrTest1 << "(adr: " << pStrTest1 << ")" << " pStrTest2: " << *pStrTest2 << "(adr: " << pStrTest2 << ")" << endl;
+
+	//avoid Danlgin Pointer
+	pStrTest1 = pStrTest2 = NULL;
+	cout << "pStrTest1: adr: " << pStrTest1 << " pStrTest2 adr: " << pStrTest2 << endl;
+
 
 	return 0;
 }
