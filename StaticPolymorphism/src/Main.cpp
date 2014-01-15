@@ -52,6 +52,10 @@ private:
 };
 
 int main() {
+	Derived1 *pDerived = new Derived1();
+    cout << pDerived->CanPerformAction() << endl;
+    cout << pDerived->StaticCanPerformAction() << endl;
+
     Base<Derived1> *pBase = new Derived1;
     cout << pBase->CanPerformAction() << endl;
     cout << pBase->StaticCanPerformAction() << endl;
