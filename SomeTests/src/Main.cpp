@@ -114,6 +114,19 @@ int main() {
 	//program crash!!
 	//cout << "length uninitialized pointer: " << pStrTest1->length() << endl;
 
+
+	cout << endl << endl << "Array/Vector test" << endl;
+	int intArr[2] = { 1, 2};
+	int *pIntArr[2];
+	vector<int> intVector(2);
+	vector<int*> pPntVector(2);
+	pIntArr[0] = &intArr[0];
+	pIntArr[1] = &intArr[1];
+	cout << "length intArr: " << sizeof(intArr)/sizeof(*intArr) << endl;
+	cout << "length pIntArr: " << sizeof(pIntArr)/sizeof(*pIntArr) << endl;
+	cout << "length intVector: " << intVector.size() << endl;
+	cout << "length pIntVector: " << pPntVector.size() << endl;
+
 	return 0;
 }
 

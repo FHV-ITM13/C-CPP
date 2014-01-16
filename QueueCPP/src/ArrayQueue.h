@@ -11,8 +11,8 @@ template<typename T>
 class ArrayQueue {
 public:
 	ArrayQueue(unsigned int size) {
-		first = 0;
-		back = 0;
+		first = back = elemsCounter = 0;
+		this->size = size;
 		elems = new T[size];
 	}
 
@@ -21,18 +21,29 @@ public:
 		//malloc -> free for tiding up!! IMPORTANT!
 	}
 
-	void enqueue(const T &value) {
+	bool enqueue(const T &value) {
+		//oder size aus ctor in variable speichern...
+		//if(elemsCounter == size)) {
+		if(elemsCounter == sizeof elems / sizeof elems[0]) {
+			return false;
+		}
+
+		++elemsCounter;
 		elems[back] = &value;
-		back = ++back % sizeof elems;
+		//back = ++back % size;
+		back = ++back % (sizeof elems / sizeof elems[0]);
+
+		return true;
 	}
 
 	T& dequeue() {
-		T& temp = &elems[first];
+		T& temp = elems[first];
 		/*
 		 * first wird einfach hoch gezaehlt
 		 * wert wird ueberschrieben
 		 */
 		first = ++first % sizeof elems;
+		--elemsCounter;
 		return temp;
 	}
 
@@ -45,11 +56,14 @@ private:
 	 * array wird mit new erzeugt, daher T *elems..
 	 * array kann nicht auf dem stack erzeugt werden, da die groeﬂe bei arrays auf
 	 * dem stack sofort angegeben werden muss??
-	 * auf objekte, die mit new erzeugt werden sind nur pointer erlaubt!
+	 *
+	 *Alternative zu Array w‰re ein Vektor
 	 */
 	T *elems;
 	unsigned int first;
 	unsigned int back;
+	unsigned int elemsCounter;
+	unsigned int size;
 };
 
 #endif /* ARRAYQUEUE_H_ */
