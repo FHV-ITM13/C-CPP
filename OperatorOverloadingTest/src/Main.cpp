@@ -5,6 +5,7 @@
  *      Author: Stefan
  */
 
+int main() {
 
-
-
+	return 0;
+}
