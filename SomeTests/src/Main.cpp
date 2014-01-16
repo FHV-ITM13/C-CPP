@@ -109,6 +109,10 @@ int main() {
 	pStrTest1 = pStrTest2 = NULL;
 	cout << "pStrTest1: adr: " << pStrTest1 << " pStrTest2 adr: " << pStrTest2 << endl;
 
+	//uninitialized pointer test
+	string *pStrTest3;
+	//program crash!!
+	//cout << "length uninitialized pointer: " << pStrTest1->length() << endl;
 
 	return 0;
 }
