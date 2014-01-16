@@ -11,7 +11,7 @@
 #include "ListQueue.h"
 
 int main() {
-	ArrayQueue<int> aqueue(5);
+	ArrayQueue<int, 5> aqueue;
 	ListQueue<int> lqueue();
 
 	//TODO testing

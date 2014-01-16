@@ -7,12 +7,11 @@
 #ifndef ARRAYQUEUE_H_
 #define ARRAYQUEUE_H_
 
-template<typename T>
+template<typename T, int size>
 class ArrayQueue {
 public:
-	ArrayQueue(unsigned int size) {
+	ArrayQueue() {
 		first = back = elemsCounter = 0;
-		this->size = size;
 		elems = new T[size];
 	}
 
@@ -23,6 +22,7 @@ public:
 
 	bool enqueue(const T &value) {
 		//oder size aus ctor in variable speichern...
+		//oder size als non-type angeben lassen
 		//if(elemsCounter == size)) {
 		if(elemsCounter == sizeof elems / sizeof elems[0]) {
 			return false;
@@ -63,7 +63,6 @@ private:
 	unsigned int first;
 	unsigned int back;
 	unsigned int elemsCounter;
-	unsigned int size;
 };
 
 #endif /* ARRAYQUEUE_H_ */
