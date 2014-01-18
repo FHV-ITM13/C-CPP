@@ -1,0 +1,44 @@
+/*
+ * Main.cpp
+ *
+ *  Created on: 18.01.2014
+ *      Author: Stefan
+ */
+
+#include <iostream>
+#include <vector>
+#include "Shape.h"
+#include "Circle.h"
+#include "Rectangle.h"
+
+int main() {
+	Shape s;
+	Circle c;
+	Rectangle r;
+
+	std::cout << "call print() methods (static binding):" << std::endl;
+	s.print();
+	c.print();
+	r.print();
+
+	std::cout << "call print() and print2() methods:" << std::endl;
+	std::vector<Shape*> vector;
+	vector.push_back(new Shape());
+	vector.push_back(new Rectangle());
+	vector.push_back(new Circle());
+
+	std::vector<Shape*>::iterator iter = vector.begin();
+
+
+	while(iter != vector.end()) {
+		//only print of shape is called - still static binding
+		(*iter)->print();
+		// virtuell methods, tell compiler "Wait until it is used in a program
+		// and then get the implementation from the object instance"
+		// -> dynamic/late binding!
+		(*iter)->print2();
+		++iter;
+	}
+
+	return 0;
+}
