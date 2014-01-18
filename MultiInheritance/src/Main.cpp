@@ -56,8 +56,13 @@ int main() {
 	 */
 	A aa;
 	Base bbase = aa;
+	Base *pBbase = &bbase;
+	A *aaa = dynamic_cast<A*>(pBbase);
 
 	cout << bbase.getAge() << endl;
+
+	cout << "bbase: " << pBbase << endl;
+	cout << "aaa: " << aaa << endl;
 
 	cout << endl << endl;
 
