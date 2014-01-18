@@ -10,8 +10,10 @@
 #include "Shape.h"
 #include "Circle.h"
 #include "Rectangle.h"
+#include "AbstractShape.h"
 
 int main() {
+	//AbstractShape as; //Compiler Error!
 	Shape s;
 	Circle c;
 	Rectangle r;

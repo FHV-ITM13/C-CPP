@@ -9,8 +9,9 @@
 #define SHAPE_H_
 
 #include <iostream>
+#include "AbstractShape.h"
 
-class Shape {
+class Shape : public AbstractShape {
 public:
 	Shape() { }
 	~Shape() {	}
