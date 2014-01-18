@@ -24,4 +24,6 @@ float calcAbsoluteValue(float value) {
 	}
 
 	return value;
+	
+	
 }
