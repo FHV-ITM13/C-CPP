@@ -18,7 +18,10 @@ using namespace std;
 class C: public A, public B {
 
 public:
-	C()  { name = new string("C"); }
+	C()  {
+		name = new string("C");
+		age = new int(3); //only inherited once, because of virtual in A : virtual Base, B : ...
+	}
 	virtual ~C() {
 		cout << "C destructor" << endl;
 		delete name;

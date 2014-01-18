@@ -10,15 +10,20 @@
 
 #include <string>
 #include <iostream>
+#include "Base.h"
 using namespace std;
 
-class B {
+class B : virtual public Base {
 
 public:
-	B()  { name = new string("B"); }
+	B()  {
+		name = new string("B");
+		age = new int(2);
+	}
 	virtual ~B() {
 		cout << "B destructor" << endl;
 		delete name;
+		delete age;
 	}
 
 	virtual string getName() {
