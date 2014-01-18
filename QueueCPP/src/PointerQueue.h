@@ -10,12 +10,21 @@
 
 
 template<typename T, int size>
+typedef struct {
+	T data;
+} Data;
+
+template<typename T, int size>
 class PointerQueue {
 public:
 	PointerQueue() {
+
 	}
 
 private:
+	Data *front;
+	Data *back;
+	int count;
 };
 
 
