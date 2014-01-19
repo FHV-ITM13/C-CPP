@@ -13,9 +13,9 @@ using namespace std;
 
 class INewsConsumer {
     public:
-		INewsConsumer () {}
-		virtual ~INewsConsumer() {}
-        virtual void consume(string value) = 0;
+		INewsConsumer () {} //koennte weggelassen werden
+		virtual ~INewsConsumer() {} //wird benoetigt
+        virtual void consume(string value) = 0; //const string besser
 };
 
 class NewsServer {

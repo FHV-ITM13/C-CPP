@@ -19,11 +19,11 @@ template<class Derived>
 class Base {
 public:
 	static string StaticCanPerformAction() {
-		return Derived::staticCanPerformActionImpl();
+		return "base: " + Derived::staticCanPerformActionImpl();
 	}
 
 	string CanPerformAction() {
-		return static_cast<Derived *>(this)->canPerformActionImpl();
+		return "base: " + static_cast<Derived *>(this)->canPerformActionImpl();
 	}
 };
 
@@ -52,6 +52,10 @@ private:
 };
 
 int main() {
+	Derived1 *pDerived = new Derived1();
+    cout << pDerived->CanPerformAction() << endl;
+    cout << pDerived->StaticCanPerformAction() << endl;
+
     Base<Derived1> *pBase = new Derived1;
     cout << pBase->CanPerformAction() << endl;
     cout << pBase->StaticCanPerformAction() << endl;

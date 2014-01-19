@@ -7,40 +7,31 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-struct data {
-	void* value;
-	struct data* next ;
-	struct data* prev;
-};
-
-struct data* first = NULL;
-
-void push(void* value) {
-	if (first->value == NULL) {
-		first->value = value;
-	} else {
-		struct data tmp;
-		tmp.value = value;
-		tmp.next = first;
-		first->prev = &tmp;
-		first = &tmp;
-	}
-}
-
-void* pop() {
-	if (first->value != NULL) {
-		void* value = first->value;
-		first = first->next;
-		return value;
-	}
-	return NULL;
-}
+#include "List.h"
 
 int main(void) {
-	int i = 1;
-	push(&i);
+	int i1 = 1, i2 = 2, i3 = 3, i4 = 4;
+	push(&i1);
+	push(&i2);
+	push(&i3);
+	push(&i4);
 
-	int* x = pop();
-	printf("%d", *x);
+	printf("POP: %d, %d, %d, %d, %d \n", *(int*) pop(), *(int*) pop(),
+			*(int*) pop(), *(int*) pop(), initialized);
+
+	enqueue(&i1);
+	enqueue(&i2);
+	enqueue(&i3);
+	enqueue(&i4);
+
+	printf("DEQUEUE: %d, %d, %d, %d, %d \n", *(int*) dequeue(), *(int*) dequeue(),
+			*(int*) dequeue(), *(int*) dequeue(), initialized);
+
+	enqueue(&i1);
+	enqueue(&i2);
+	enqueue(&i3);
+	enqueue(&i4);
+
+	printf("MIX: %d, %d, %d, %d, %d \n", *(int*) pop(), *(int*) dequeue(),
+			*(int*) pop(), *(int*) dequeue(), initialized);
 }
