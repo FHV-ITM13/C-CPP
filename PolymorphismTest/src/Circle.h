@@ -15,7 +15,7 @@
 class Circle : public Shape {
 public:
 	Circle() { }
-	void print() {
+	virtual void print() {
 		std::cout << "Circle print() - non-virtuell" << std::endl;
 	}
 

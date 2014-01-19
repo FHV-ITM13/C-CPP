@@ -14,7 +14,7 @@
 class Rectangle : public Shape {
 public:
 	Rectangle() { }
-	void print() {
+	virtual void print() {
 		std::cout << "Rectangle print() - non-virtuell" << std::endl;
 	}
 

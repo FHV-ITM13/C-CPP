@@ -16,7 +16,7 @@ public:
 	Shape() { }
 	~Shape() {	}
 
-	void print() {
+	virtual void print() {
 		std::cout << "Shape print() - non-virtuell" << std::endl;
 	}
 
