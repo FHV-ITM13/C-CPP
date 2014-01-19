@@ -22,7 +22,7 @@ int main() {
 	s.print();
 	c.print();
 	r.print();
-
+	std::cout << std::endl << std::endl;
 	std::cout << "call print() and print2() methods:" << std::endl;
 	std::vector<Shape*> vector;
 	vector.push_back(new Shape());
@@ -39,6 +39,7 @@ int main() {
 		// -> dynamic/late binding!
 		(*iter)->print2();
 		++iter;
+		std::cout << std::endl << std::endl;
 	}
 
 	std::cout << std::endl << std::endl;
