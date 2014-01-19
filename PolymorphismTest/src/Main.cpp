@@ -31,8 +31,7 @@ int main() {
 
 	std::vector<Shape*>::iterator iter = vector.begin();
 
-
-	while(iter != vector.end()) {
+	while (iter != vector.end()) {
 		//only print of shape is called - still static binding
 		(*iter)->print();
 		// virtuell methods, tell compiler "Wait until it is used in a program
@@ -41,6 +40,15 @@ int main() {
 		(*iter)->print2();
 		++iter;
 	}
+
+	std::cout << std::endl << std::endl;
+
+	s.print2();
+	s.print3();
+	const Shape sConst;
+	//sConst.print(); nicht moeglich!!
+	sConst.print2();
+	sConst.print3();
 
 	return 0;
 }
