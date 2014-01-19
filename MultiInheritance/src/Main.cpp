@@ -39,12 +39,16 @@ int main() {
 
 	cout << "Delete A" << endl;
 	delete a;
+	a = NULL;
 
 	cout << endl << "Delete B" << endl;
 	delete b;
+	b = NULL;
+
 
 	cout << endl << "Delete C" << endl;
-	//delete c; //lets application crash - why??
+	delete c;
+	c = NULL;
 
 	cout << endl << "assign derived type to general type (slicing)" << endl;
 

@@ -26,6 +26,7 @@ public:
 		cout << "C destructor" << endl;
 		delete name;
 	}
+
 	virtual string getName() {
 		cout << "C call getName" << endl;
 		return *name;

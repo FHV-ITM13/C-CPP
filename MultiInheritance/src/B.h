@@ -23,7 +23,6 @@ public:
 	virtual ~B() {
 		cout << "B destructor" << endl;
 		delete name;
-		delete age;
 	}
 
 	virtual string getName() {
