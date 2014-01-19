@@ -50,5 +50,13 @@ int main() {
 	sConst.print2();
 	sConst.print3();
 
+	std::cout << std::endl << std::endl;
+	s.asdf();
+	r.asdf();
+
+	Shape rs = r;
+	rs.asdf();
+
+
 	return 0;
 }

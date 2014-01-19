@@ -11,9 +11,15 @@
 #include <iostream>
 #include "Shape.h"
 
-class Rectangle : public Shape {
+class Rectangle: public Shape {
 public:
-	Rectangle() { }
+	Rectangle() {
+	}
+
+	void asdf() {
+		std::cout << "Rectangle asdf() - non-virtuell" << std::endl;
+	}
+
 	virtual void print() {
 		std::cout << "Rectangle print() - non-virtuell" << std::endl;
 	}
