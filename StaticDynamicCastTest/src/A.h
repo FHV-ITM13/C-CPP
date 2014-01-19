@@ -13,7 +13,7 @@
 #include "Base.h"
 using namespace std;
 
-class A : virtual public Base {
+class A : public Base {
 
 public:
 	A() {
@@ -35,7 +35,7 @@ public:
 
 		return *name;
 	}
-private:
+protected:
 	string *name;
 };
 

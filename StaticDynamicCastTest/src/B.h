@@ -1,38 +1,38 @@
 /*
- * B.h
+ * A.h
  *
  *  Created on: 18.01.2014
  *      Author: Stefan
  */
 
-#ifndef B_H_
-#define B_H_
+#ifndef A_H_
+#define A_H_
 
 #include <string>
 #include <iostream>
 #include "Base.h"
 using namespace std;
 
-class B : virtual public Base {
+class B {
 
 public:
-	B()  {
+	B() {
 		name = new string("B");
-		age = new int(2);
 	}
-	virtual ~B() {
+	~B() {
 		cout << "B destructor" << endl;
 		delete name;
 	}
 
-	virtual string getName() {
+	string getName() {
 		cout << "B call getName" << endl;
+
 		return *name;
 	}
-private:
+protected:
 	string *name;
 };
 
 
 
-#endif /* B_H_ */
+#endif /* A_H_ */

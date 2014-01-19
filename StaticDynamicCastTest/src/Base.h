@@ -29,6 +29,7 @@ public:
 		return *age;
 	}
 
+protected:
 	int *age;
 };
 

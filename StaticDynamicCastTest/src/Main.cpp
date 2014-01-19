@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : MultiInheritance.cpp
+// Name        : StaticDynamicCastTest.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
@@ -9,66 +9,84 @@
 #include <iostream>
 #include "A.h"
 #include "B.h"
-#include "C.h"
 #include "Base.h"
 using namespace std;
 
 int main() {
 	Base *base = new Base();
 	A *a = new A();
-	B *b = new B();
-	C *c = new C();
 
-	cout << endl << "Base object" << endl;
-	cout << base->getAge() << endl;
+	A *ap = static_cast<A*>(base);
+	if(ap != NULL) {
+		//geht nicht
+		//cout << ap->getName() << endl;
+		cout << ap->getAge() << endl;
+	} else {
+		cout << "AP ist null" << endl;
+	}
 
-	cout << endl << "A object" << endl;
-	cout << a->getName() << endl;
-	cout << a->getAge() << endl;
+	A* ap2 = dynamic_cast<A*>(base);
+	if(ap2 != NULL) {
+		cout << ap2->getName() << endl;
+		cout << ap2->getAge() << endl;
+	} else {
+		cout << "AP 2 ist null" << endl;
+	}
 
-	cout << endl << "B object" << endl;
-	cout << b->getName() << endl;
-	cout << b->getAge() << endl;
-
-	cout << endl << "C object" << endl;
-	cout << c->getName() << endl;
-	cout << c->getAge() << endl;
-	cout << c->A::getName() << endl; //to specify which method to call
-	cout << c->B::getName() << endl; //to specify which method to call
-	cout << c->Base::getAge() << endl;
-
-	cout << "Delete A" << endl;
-	delete a;
-	a = NULL;
-
-	cout << endl << "Delete B" << endl;
-	delete b;
-	b = NULL;
-
-
-	cout << endl << "Delete C" << endl;
-	delete c;
-	c = NULL;
-
-	cout << endl << "assign derived type to general type (slicing)" << endl;
-
-	/*
-	 * Base don’t know anything about the derived class A.
-	 * Only the attributes known to the base class are copied.
-	 * The attributes of the A class will not be copied
-	 * -> the derived class has been sliced.
-	 */
-	A aa;
-	Base bbase = aa;
-	Base *pBbase = &bbase;
-	A *aaa = dynamic_cast<A*>(pBbase);
-
-	cout << bbase.getAge() << endl;
-
-	cout << "bbase: " << pBbase << endl;
-	cout << "aaa: " << aaa << endl;
+	A* ap3 = (A*)base;
+	if(ap3 != NULL) {
+		//geht nicht
+		//cout << ap3->getName() << endl;
+		cout << ap3->getAge() << endl;
+	} else {
+		cout << "AP 3 ist null" << endl;
+	}
 
 	cout << endl << endl;
 
+	Base *basep = static_cast<Base*>(a);
+	if(basep != NULL) {
+		cout << basep->getAge() << endl;
+	} else {
+		cout << "basep ist null" << endl;
+	}
+
+	Base* basep1 = dynamic_cast<Base*>(a);
+	if(ap2 != NULL) {
+		cout << basep1->getAge() << endl;
+	} else {
+		cout << "basep 1 ist null" << endl;
+	}
+
+	Base* basep2 = (Base*)a;
+	if(basep2 != NULL) {
+		cout << basep2->getAge() << endl;
+	} else {
+		cout << "basep 2 ist null" << endl;
+	}
+
+	A *ap4 = static_cast<A*>(basep);
+	if(ap4 != NULL) {
+		cout << ap4->getName() << endl;
+		cout << ap4->getAge() << endl;
+	} else {
+		cout << "AP ist null" << endl;
+	}
+
+	A* ap5 = dynamic_cast<A*>(basep);
+	if(ap5 != NULL) {
+		cout << ap5->getName() << endl;
+		cout << ap5->getAge() << endl;
+	} else {
+		cout << "AP 2 ist null" << endl;
+	}
+
+	A* ap6 = (A*)basep;
+	if(ap6 != NULL) {
+		cout << ap6->getName() << endl;
+		cout << ap6->getAge() << endl;
+	} else {
+		cout << "AP 3 ist null" << endl;
+	}
 	return 0;
 }
