@@ -17,6 +17,7 @@ public:
 	}
 
 	void asdf() {
+		//ueberdeckt!
 		std::cout << "Rectangle asdf() - non-virtuell" << std::endl;
 	}
 
