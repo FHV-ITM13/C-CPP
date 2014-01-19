@@ -34,7 +34,7 @@ int main() {
 	while (iter != vector.end()) {
 		//only print of shape is called - still static binding
 		(*iter)->print();
-		// virtuell methods, tell compiler "Wait until it is used in a program
+		// virtuel methods, tell compiler "Wait until it is used in a program
 		// and then get the implementation from the object instance"
 		// -> dynamic/late binding!
 		(*iter)->print2();

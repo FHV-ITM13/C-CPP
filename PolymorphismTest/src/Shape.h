@@ -20,7 +20,7 @@ public:
 		std::cout << "Shape asdf() - non-virtuell" << std::endl;
 	}
 
-	virtual void print() {
+	void print() {
 		std::cout << "Shape print() - non-virtuell" << std::endl;
 	}
 

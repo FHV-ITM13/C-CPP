@@ -21,7 +21,7 @@ public:
 		std::cout << "Rectangle asdf() - non-virtuell" << std::endl;
 	}
 
-	virtual void print() {
+	void print() {
 		std::cout << "Rectangle print() - non-virtuell" << std::endl;
 	}
 
