@@ -64,9 +64,9 @@ int main() {
 
 	char a = 'a';
 	char * str ="a";
-	printf("sizeof(''a'') = %d\n", sizeof("a"));
-	printf("sizeof('a') = %d\n", sizeof('a'));
-	printf("sizeof(char *str=''a'') = %d\n", sizeof(str));
-	printf("sizeof(char a = 'a') = %d\n", sizeof(a));
+	printf("sizeof(''a'') = %d\n", sizeof("a")); //liefert 2
+	printf("sizeof('a') = %d\n", sizeof('a')); //als int interpretiert
+	printf("sizeof(char *str=''a'') = %d\n", sizeof(*str)); //liefert 1
+	printf("sizeof(char a = 'a') = %d\n", sizeof(a)); // liefert 1
 	return 0;
 }
