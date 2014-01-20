@@ -52,5 +52,14 @@ int main() {
 	printf("sizeof(structc_t) = %d\n", sizeof(structc_t));
 	printf("sizeof(structd_t) = %d\n", sizeof(structd_t));
 
+	int i = 5;
+	int *p = &i;
+
+	printf("sizeof(int*) = %d\n", sizeof(p));
+
+	double d  = 5.0;
+	double *pD = &d;
+
+	printf("sizeof(double*) = %d\n", sizeof(pD));
 	return 0;
 }
