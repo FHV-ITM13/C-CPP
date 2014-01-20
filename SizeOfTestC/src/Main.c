@@ -61,5 +61,12 @@ int main() {
 	double *pD = &d;
 
 	printf("sizeof(double*) = %d\n", sizeof(pD));
+
+	char a = 'a';
+	char * str ="a";
+	printf("sizeof(''a'') = %d\n", sizeof("a"));
+	printf("sizeof('a') = %d\n", sizeof('a'));
+	printf("sizeof(char *str=''a'') = %d\n", sizeof(str));
+	printf("sizeof(char a = 'a') = %d\n", sizeof(a));
 	return 0;
 }
