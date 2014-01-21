@@ -63,7 +63,7 @@ int main() {
 	printf("sizeof(double*) = %d\n", sizeof(pD));
 
 	char a = 'a';
-	char * str ="a";
+	char *str ="a";
 	printf("sizeof(''a'') = %d\n", sizeof("a")); //liefert 2
 	printf("sizeof('a') = %d\n", sizeof('a')); //als int interpretiert
 	printf("sizeof(char *str=''a'') = %d\n", sizeof(*str)); //liefert 1
