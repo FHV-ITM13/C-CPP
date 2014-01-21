@@ -13,6 +13,7 @@
 using namespace std;
 
 void testArrayQueue();
+void testPointerQueue();
 
 int main() {
 	testArrayQueue();

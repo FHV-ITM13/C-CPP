@@ -126,7 +126,6 @@ int main() {
 	cout << "length pIntArr: " << sizeof(pIntArr)/sizeof(*pIntArr) << endl;
 	cout << "length intVector: " << intVector.size() << endl;
 	cout << "length pIntVector: " << pPntVector.size() << endl;
-
 	return 0;
 }
 
