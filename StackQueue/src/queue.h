@@ -41,6 +41,11 @@ void freeQueue() {
 		free(pQueueStart);
 		++pQueueStart;
 	}
+
+	pQueueStart = NULL;
+	pQueueEnd = NULL;
+	pQueueFirst = NULL;
+	pQueueBack = NULL;
 }
 
 int enqueue(int value) {
@@ -48,9 +53,16 @@ int enqueue(int value) {
 		return -1;
 	}
 
+	if(pQueueFirst == NULL) {
+		pQueueFirst = pQueueBack;
+	}
+
 	*pQueueBack = value;
-	pQueueFirst = pQueueBack;
-	pQueueBack = ++pQueueBack % _size;
+	++pQueueBack;
+
+	if(pQueueBack > pQueueEnd) {
+		pQueueBack = pQueueStart;
+	}
 
 	return 0;
 }
@@ -61,13 +73,17 @@ int dequeue() {
 	}
 
 	int value = *pQueueFirst;
-	pQueueFirst = --pQueueFirst % _size;
+
+	++pQueueFirst;
+	if(pQueueFirst > pQueueEnd) {
+		pQueueFirst = pQueueStart;
+	}
 
 	return value;
 }
 
 int elemsQueue() {
-	return pQueueFirst == NULL ? 0 : abs(pQueueBack - pQueueFirst);
+	return pQueueFirst == NULL ? -1 : abs(pQueueBack - pQueueFirst);
 }
 
 

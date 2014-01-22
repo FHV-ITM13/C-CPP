@@ -41,14 +41,22 @@ int main() {
 
 
 	initQueue(3);
-	printf("dequeue empty queue: %i", dequeue());
+	printf("dequeue empty queue: %i\n", dequeue());
+	printf("elems: %d\n", elemsQueue());
 	printf("enqueue: %d\n", enqueue(1));
 	printf("elems: %d\n", elemsQueue());
 	printf("enqueue: %d\n", enqueue(2));
 	printf("elems: %d\n", elemsQueue());
 	printf("enqueue: %d\n", enqueue(3));
 	printf("elems: %d\n", elemsQueue());
-
+	printf("dequeue: %i\n", dequeue());
+	printf("elems: %d\n", elemsQueue());
+	printf("dequeue: %i\n", dequeue());
+	printf("elems: %d\n", elemsQueue());
+	printf("dequeue: %i\n", dequeue());
+	printf("elems: %d\n", elemsQueue());
+	printf("dequeue: %i\n", dequeue());
+	printf("elems: %d\n", elemsQueue());
 	freeQueue();
 	return 0;
 }

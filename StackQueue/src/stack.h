@@ -35,6 +35,10 @@ void freeStack() {
 		free(pStackStart);
 		++pStackStart;
 	}
+
+	pStackStart = NULL;
+	pStack = NULL;
+	pStackEnd = NULL;
 }
 
 int push(int value) {
@@ -57,7 +61,7 @@ int pop() {
 }
 
 int elems() {
-	return pStack - pStackStart;
+	return pStack == NULL ? -1 : pStack - pStackStart;
 }
 
 #endif /* STACK_H_ */
