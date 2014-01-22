@@ -36,6 +36,7 @@ void freeStack() {
 		++pStackStart;
 	}
 
+	//avoid dangling pointers
 	pStackStart = NULL;
 	pStack = NULL;
 	pStackEnd = NULL;

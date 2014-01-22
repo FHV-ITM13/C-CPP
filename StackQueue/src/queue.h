@@ -42,6 +42,7 @@ void freeQueue() {
 		++pQueueStart;
 	}
 
+	//avoid dangling pointers
 	pQueueStart = NULL;
 	pQueueEnd = NULL;
 	pQueueFirst = NULL;
