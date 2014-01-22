@@ -141,7 +141,7 @@ void BAIS_delete(bais_o * o) {
 }
 
 is_t is_class = { &IS_hasNext, &IS_next, &IS_delete };
-bais_t bais_class = { &bais_class, &BAIS_hasNext, &BAIS_next, &BAIS_delete };
+bais_t bais_class = { &is_class, &BAIS_hasNext, &BAIS_next, &BAIS_delete };
 fis_t fis_class = { &is_class, &FIS_hasNext, &FIS_next, &FIS_delete };
 ucis_t ucis_class = { &ucis_class, &UCIS_hasNext, &UCIS_next, &UCIS_delete };
 
