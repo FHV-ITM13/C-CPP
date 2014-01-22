@@ -11,7 +11,6 @@
 
 class AbstractShape {
 public:
-	virtual void print() = 0; //pure virtual method
 	virtual void print2() = 0;
 };
 

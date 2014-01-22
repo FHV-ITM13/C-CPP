@@ -49,7 +49,7 @@ int main() {
 	cout << endl << "assign derived type to general type (slicing)" << endl;
 
 	/*
-	 * Base don’t know anything about the derived class A.
+	 * Base donï¿½t know anything about the derived class A.
 	 * Only the attributes known to the base class are copied.
 	 * The attributes of the A class will not be copied
 	 * -> the derived class has been sliced.
